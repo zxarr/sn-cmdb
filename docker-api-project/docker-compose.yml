@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: cmdb-php-web
+    ports:
+      - "8080:80"
+    environment:
+      SERVICE_NOW_API_URL: ${SERVICE_NOW_API_URL}
+      SERVICE_NOW_USERNAME: ${SERVICE_NOW_USERNAME}
+      SERVICE_NOW_PASSWORD: ${SERVICE_NOW_PASSWORD}
+    volumes:
+      - ./src/serviceNow/api.php:/var/www/html/api.php
+      - ./.env:/var/www/html/.env
+    restart: unless-stopped
