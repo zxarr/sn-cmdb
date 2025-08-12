@@ -11,7 +11,7 @@ COPY composer.json ./
 # Install system dependencies and PHP extensions
 RUN apt-get update && \
     apt-get install -y libcurl4-openssl-dev unzip && \
-    docker-php-ext-install curl zip
+    docker-php-ext-install curl zip libzip
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
