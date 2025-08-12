@@ -6,7 +6,7 @@ WORKDIR /var/www/html
 # Copy application files
 COPY src/serviceNow/api.php /var/www/html/api.php
 COPY .env /var/www/html/.env
-COPY composer.json composer.lock ./
+COPY composer.json ./
 
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y libcurl4-openssl-dev \
