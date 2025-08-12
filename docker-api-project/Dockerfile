@@ -19,6 +19,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && rm composer-setup.php
 
 # Install PHP dependencies
+COPY composer.json ./
 RUN composer install
 
 # Expose the application port
