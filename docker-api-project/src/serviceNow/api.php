@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 header('Content-Type: application/json');
 
 // Load environment variables
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $serviceNowUrl = $_ENV['SERVICE_NOW_API_URL'] ?? '';
